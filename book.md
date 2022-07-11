@@ -33,8 +33,15 @@ Bir örnek değişkenin serileştirme işlemi tarafından atlanmasını istiyors
 ![image](https://user-images.githubusercontent.com/95742539/178165040-e4a4b03d-6fc2-45c2-a82c-bfb915503cf2.png)
 Peki neden bir nesne serileştirilemez ? Çünkü developer o sınıfı serileştirilebilir hale getirmeyi unutmuş ya da serileştirilmesi istenmiyor olabilir. Mesela Java Class Library de bulunan çoğu şey(network connections, threads, or file objects) serileştirilemez. (Runtime a özgüdür) Başka bir deyişle, belirli bir platformda, belirli bir JVM'de programınızın belirli bir çalışmasına özgü bir şekilde somutlaştırılırlar. **Program kapandığında, bu şeyleri anlamlı bir şekilde hayata döndürmenin hiçbir yolu yoktur; her seferinde sıfırdan oluşturulmaları gerekir.**
 
+## Deserialization: restoring an object
 
+![image](https://user-images.githubusercontent.com/95742539/178170362-06f14cda-8db6-435f-9630-e69486c1cad7.png)
 
+![image](https://user-images.githubusercontent.com/95742539/178170372-8bca9d2c-58be-4795-a8b2-3660e832ec2c.png)
+
+Bir nesne deserialized edildiği zaman, JVM, serileştirilmiş nesnenin seri hale getirildiği sırada sahip olduğu aynı duruma(state) sahip heap üzerinde yeni bir nesne oluşturarak nesneyi hayata döndürmeye çalışır. Null (nesne referansları için) ya da varsayılan ilkel değerler olarak geri gelen geçici değişkenler dışında.
+
+![image](https://user-images.githubusercontent.com/95742539/178170595-38321767-8b24-46c7-84ea-49231de3a6e0.png)
 
 
 
